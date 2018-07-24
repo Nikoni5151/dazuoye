@@ -4,13 +4,13 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\NpMember */
+/* @var $model backend\models\WcTeam */
 
-$this->title = '添加成员';
-$this->params['breadcrumbs'][] = ['label' => '成员列表', 'url' => ['index']];
+$this->title = '添加新球队';
+$this->params['breadcrumbs'][] = ['label' => '球队列表', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="np-member-create">
+<div class="wc-team-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

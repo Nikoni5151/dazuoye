@@ -399,57 +399,131 @@ AppAsset::register($this);
           <li class="sidebar-label pt15">世界杯</li>
 
           <li>
-            <a class="accordion-toggle" href="<?php echo Url::to(['department/index']) ?>">
+            <a class="accordion-toggle" href="#">
+              <span class="glyphicon glyphicon-leaf"></span>
+              <span class="sidebar-title">国家</span>
+              <span class="caret"></span>
+            </a>
+            <ul class="nav sub-nav">
+              <li>
+                <a href="<?php echo Url::to(['wc-country/index']) ?>">
+                  <span class="glyphicon glyphicon-book"></span> 国家列表</a>
+              </li>
+              <li>
+                <a href="<?php echo Url::to(['wc-country/create']) ?>">
+                  <span class="glyphicon glyphicon-plus-sign"></span> 添加国家</a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a class="accordion-toggle" href="#">
+              <span class="glyphicon glyphicon-thumbs-up"></span>
+              <span class="sidebar-title">教练</span>
+              <span class="caret"></span>
+            </a>
+            <ul class="nav sub-nav">
+              <li>
+                <a href="<?php echo Url::to(['wc-caoch/index']) ?>">
+                  <span class="glyphicon glyphicon-book"></span> 教练列表</a>
+              </li>
+              <li>
+                <a href="<?php echo Url::to(['wc-caoch/create']) ?>">
+                  <span class="glyphicon glyphicon-plus-sign"></span> 添加教练</a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a class="accordion-toggle" href="#">
               <span class="glyphicon glyphicon-flag"></span>
               <span class="sidebar-title">球队</span>
               <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
               <li>
-                <a href="<?php echo Url::to(['department/index']) ?>">
+                <a href="<?php echo Url::to(['wc-team/index']) ?>">
                   <span class="glyphicon glyphicon-book"></span> 球队列表</a>
               </li>
               <li>
-                <a href="<?php echo Url::to(['department/create']) ?>">
+                <a href="<?php echo Url::to(['wc-team/create']) ?>">
                   <span class="glyphicon glyphicon-plus-sign"></span> 添加球队</a>
               </li>
             </ul>
           </li>
 
           <li>
-            <a class="accordion-toggle" href="<?php echo Url::to(['batch/index']) ?>">
+            <a class="accordion-toggle" href="#">
               <span class="glyphicon glyphicon-user"></span>
               <span class="sidebar-title">球员</span>
               <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
               <li>
-                <a href="<?php echo Url::to(['batch/create']) ?>">
+                <a href="<?php echo Url::to(['wc-player/index']) ?>">
                   <span class="glyphicon glyphicon-book"></span> 球员列表</a>
+              </li>
+              <li>
+                <a href="<?php echo Url::to(['wc-player/create']) ?>">
+                  <span class="glyphicon glyphicon-plus-sign"></span> 添加球员</a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a class="accordion-toggle" href="#">
+              <span class="glyphicon glyphicon-flash"></span>
+              <span class="sidebar-title">比赛</span>
+              <span class="caret"></span>
+            </a>
+            <ul class="nav sub-nav">
+              <li>
+                <a href="<?php echo Url::to(['wc-match/index']) ?>">
+                  <span class="glyphicon glyphicon-book"></span> 比赛列表</a>
               </li>
 
               <li>
-                <a href="<?php echo Url::to(['batch/create']) ?>">
-                  <span class="glyphicon glyphicon-plus-sign"></span> 添加球员</a>
+                <a href="<?php echo Url::to(['wc-match/create']) ?>">
+                  <span class="glyphicon glyphicon-plus-sign"></span> 添加比赛</a>
               </li>
               
             </ul>
           </li>
 
           <li>
-            <a class="accordion-toggle" href="<?php echo Url::to(['batch/index']) ?>">
+            <a class="accordion-toggle" href="#">
+              <span class="glyphicon glyphicon-cloud"></span>
+              <span class="sidebar-title">场地</span>
+              <span class="caret"></span>
+            </a>
+            <ul class="nav sub-nav">
+              <li>
+                <a href="<?php echo Url::to(['wc-place/index']) ?>">
+                  <span class="glyphicon glyphicon-book"></span> 场地列表</a>
+              </li>
+
+              <li>
+                <a href="<?php echo Url::to(['wc-place/create']) ?>">
+                  <span class="glyphicon glyphicon-plus-sign"></span> 添加场地</a>
+              </li>
+              
+            </ul>
+          </li>
+
+          <li>
+            <a class="accordion-toggle" href="#">
               <span class="glyphicon glyphicon-film"></span>
               <span class="sidebar-title">精彩瞬间</span>
               <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
               <li>
-                <a href="<?php echo Url::to(['batch/create']) ?>">
+                <a href="<?php echo Url::to(['wc-moment/index']) ?>">
                   <span class="glyphicon glyphicon-book"></span> 精彩瞬间</a>
               </li>
 
               <li>
-                <a href="<?php echo Url::to(['batch/create']) ?>">
+                <a href="<?php echo Url::to(['wc-moment/create']) ?>">
                   <span class="glyphicon glyphicon-plus-sign"></span> 添加</a>
               </li>
               

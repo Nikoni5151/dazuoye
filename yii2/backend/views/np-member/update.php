@@ -8,7 +8,7 @@ use yii\helpers\Html;
 $this->title = '修改信息: ' . $model->mname;
 $this->params['breadcrumbs'][] = ['label' => '成员列表', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->mname, 'url' => ['view', 'id' => $model->mid]];
-$this->params['breadcrumbs'][] = '修改信息';
+$this->params['breadcrumbs'][] = '修改';
 ?>
 <div class="np-member-update">
 

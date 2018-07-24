@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
+use yii\helpers\Url;
 
 $this->title = 'My Yii Application';
 ?>
@@ -14,21 +15,30 @@ $this->title = 'My Yii Application';
         <p>信息相关</p>
 
         <p>
-            <a class="btn btn-lg btn-success" href="#">浏览成员</a>
+            <a class="btn btn-lg btn-success" href="<?php echo Url::to(['np-member/index']) ?>">浏览成员</a>
             <a> </a>
-            <a class="btn btn-lg btn-success" href="#">作业下载</a>
+            <a class="btn btn-lg btn-success" href="<?php echo Url::to(['site/teamwork']) ?>">作业下载</a>
             <a> </a>
-            <a class="btn btn-lg btn-success" href="#">留言管理</a>
+            <a class="btn btn-lg btn-success" href="<?php echo Url::to(['np-message/index']) ?>">留言管理</a>
         </p>
 
         <p>世界杯相关</p>
 
         <p>
-            <a class="btn btn-lg btn-success" href="#">查看球队</a>
+            <a class="btn btn-lg btn-success" href="<?php echo Url::to(['wc-country/index']) ?>">查看国家</a>
             <a> </a>
-            <a class="btn btn-lg btn-success" href="#">查看球员</a>
+            <a class="btn btn-lg btn-success" href="<?php echo Url::to(['wc-coach/index']) ?>">查看教练</a>
             <a> </a>
-            <a class="btn btn-lg btn-success" href="#">精彩瞬间</a>
+            <a class="btn btn-lg btn-success" href="<?php echo Url::to(['wc-team/index']) ?>">查看球队</a>
+            <a> </a>
+            <a class="btn btn-lg btn-success" href="<?php echo Url::to(['wc-player/index']) ?>">查看球员</a>
+            <a> </a>
+            <br/><br/>
+            <a class="btn btn-lg btn-success" href="<?php echo Url::to(['wc-match/index']) ?>">查看比赛</a>
+            <a> </a>
+            <a class="btn btn-lg btn-success" href="<?php echo Url::to(['wc-place/index']) ?>">查看场地</a>
+            <a> </a>
+            <a class="btn btn-lg btn-success" href="<?php echo Url::to(['wc-moment/index']) ?>">精彩瞬间</a>
         </p>
 
     </div>

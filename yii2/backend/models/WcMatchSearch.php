@@ -5,12 +5,12 @@ namespace backend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\NpMember;
+use backend\models\WcMatch;
 
 /**
- * NpMemberSearch represents the model behind the search form about `backend\models\NpMember`.
+ * WcMatchSearch represents the model behind the search form about `backend\models\WcMatch`.
  */
-class NpMemberSearch extends NpMember
+class WcMatchSearch extends WcMatch
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class NpMemberSearch extends NpMember
     public function rules()
     {
         return [
-            [['mid'], 'integer'],
-            [['mname', 'sex', 'hometown', 'sign', 'image'], 'safe'],
+            [['matchid', 'hscore', 'ascore'], 'integer'],
+            [['hometeam', 'awayteam', 'date', 'win'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class NpMemberSearch extends NpMember
      */
     public function search($params)
     {
-        $query = NpMember::find();
+        $query = WcMatch::find();
 
         // add conditions that should always apply here
 
@@ -59,14 +59,15 @@ class NpMemberSearch extends NpMember
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'mid' => $this->mid,
+            'matchid' => $this->matchid,
+            'date' => $this->date,
+            'hscore' => $this->hscore,
+            'ascore' => $this->ascore,
         ]);
 
-        $query->andFilterWhere(['like', 'mname', $this->mname])
-            ->andFilterWhere(['like', 'sex', $this->sex])
-            ->andFilterWhere(['like', 'hometown', $this->hometown])
-            ->andFilterWhere(['like', 'sign', $this->sign])
-            ->andFilterWhere(['like', 'image', $this->image]);
+        $query->andFilterWhere(['like', 'hometeam', $this->hometeam])
+            ->andFilterWhere(['like', 'awayteam', $this->awayteam])
+            ->andFilterWhere(['like', 'win', $this->win]);
 
         return $dataProvider;
     }

@@ -12,6 +12,7 @@ use Yii;
  * @property string $sex
  * @property string $hometown
  * @property string $sign
+ * @property string $image
  */
 class NpMember extends \yii\db\ActiveRecord
 {
@@ -29,8 +30,9 @@ class NpMember extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['mid', 'mname', 'sex', 'hometown'], 'required'],
+            [['mid', 'mname', 'sex', 'hometown', 'image'], 'required'],
             [['mid'], 'integer'],
+            [['image'], 'string'],
             [['mname', 'hometown'], 'string', 'max' => 20],
             [['sex'], 'string', 'max' => 2],
             [['sign'], 'string', 'max' => 255],
@@ -48,6 +50,7 @@ class NpMember extends \yii\db\ActiveRecord
             'sex' => '成员性别',
             'hometown' => '成员家乡',
             'sign' => '个性签名',
+            'image' => '成员头像',
         ];
     }
 }

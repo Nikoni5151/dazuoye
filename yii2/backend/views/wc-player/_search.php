@@ -4,28 +4,30 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\NpMemberSearch */
+/* @var $model backend\models\WcPlayerSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="np-member-search">
+<div class="wc-player-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'mid') ?>
+    <?= $form->field($model, 'pid') ?>
 
-    <?= $form->field($model, 'mname') ?>
+    <?= $form->field($model, 'pname') ?>
 
-    <?= $form->field($model, 'sex') ?>
+    <?= $form->field($model, 'number') ?>
 
-    <?= $form->field($model, 'hometown') ?>
+    <?= $form->field($model, 'tid') ?>
 
-    <?= $form->field($model, 'sign') ?>
+    <?= $form->field($model, 'goals') ?>
 
-    <?php // echo $form->field($model, 'image') ?>
+    <?php // echo $form->field($model, 'cname') ?>
+
+    <?php // echo $form->field($model, 'club') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
