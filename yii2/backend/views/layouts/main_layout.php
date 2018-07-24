@@ -306,56 +306,56 @@ AppAsset::register($this);
           <li class="sidebar-label pt15">信息管理</li>
 
           <li>
-            <a class="accordion-toggle" href="<?php echo Url::to(['department/index']) ?>">
+            <a class="accordion-toggle" href="#">
               <span class="glyphicon glyphicon-cog"></span>
               <span class="sidebar-title">成员管理</span>
               <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
               <li>
-                <a href="<?php echo Url::to(['department/index']) ?>">
+                <a href="<?php echo Url::to(['np-member/index']) ?>">
                   <span class="glyphicon glyphicon-book"></span> 成员列表</a>
               </li>
               <li>
-                <a href="<?php echo Url::to(['department/create']) ?>">
+                <a href="<?php echo Url::to(['np-member/create']) ?>">
                   <span class="glyphicon glyphicon-plus-sign"></span> 添加成员</a>
               </li>
             </ul>
           </li>
 
           <li>
-            <a class="accordion-toggle" href="<?php echo Url::to(['batch/index']) ?>">
+            <a class="accordion-toggle" href="#">
               <span class="glyphicon glyphicon-list"></span>
               <span class="sidebar-title">作业管理</span>
               <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
               <li>
-                <a href="<?php echo Url::to(['batch/create']) ?>">
+                <a href="<?php echo Url::to(['site/teamwork']) ?>">
                   <span class="glyphicon glyphicon-book"></span> 团队作业</a>
               </li>
 
               <li>
-                <a class="accordion-toggle" href="<?php echo Url::to(['batch/index']) ?>">
+                <a class="accordion-toggle" href="#">
                   <span class="glyphicon glyphicon-list"></span>
                   <span class="sidebar-title">个人作业</span>
                   <span class="caret"></span>
                 </a>
                 <ul class="nav sub-nav">
                   <li>
-                    <a href="<?php echo Url::to(['batch/index']) ?>">
+                    <a href="<?php echo Url::to(['site/personalwork1']) ?>">
                       <span class="glyphicon glyphicon-book"></span>  朱玲慧</a>
                   </li>
                   <li>
-                    <a href="<?php echo Url::to(['batch/create']) ?>">
+                    <a href="<?php echo Url::to(['site/personalwork2']) ?>">
                       <span class="glyphicon glyphicon-book"></span>  李兴贺</a>
                   </li>
                   <li>
-                    <a href="<?php echo Url::to(['batch/index']) ?>">
+                    <a href="<?php echo Url::to(['site/personalwork3']) ?>">
                       <span class="glyphicon glyphicon-book"></span>  黄信旭</a>
                   </li>
                   <li>
-                    <a href="<?php echo Url::to(['batch/create']) ?>">
+                    <a href="<?php echo Url::to(['site/personalwork4']) ?>">
                       <span class="glyphicon glyphicon-book"></span>  古丽米拉</a>
                   </li>
                 </ul>
@@ -365,28 +365,30 @@ AppAsset::register($this);
           </li>
 
           <li>
-            <a class="accordion-toggle" href="<?php echo Url::to(['department/index']) ?>">
+            <a class="accordion-toggle" href="#">
               <span class="glyphicon glyphicon-font"></span>
               <span class="sidebar-title">留言管理</span>
               <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
               <li>
-                <a href="<?php echo Url::to(['department/index']) ?>">
+                <a href="<?php echo Url::to(['np-message/index']) ?>">
                   <span class="glyphicon glyphicon-book"></span> 留言列表</a>
               </li>
               <li>
-                <a href="<?php echo Url::to(['department/create']) ?>">
+                <a href="<?php echo Url::to(['np-message/create']) ?>">
                   <span class="glyphicon glyphicon-plus-sign"></span> 添加留言</a>
               </li>
+              <?php /*
               <li>
-                <a href="<?php echo Url::to(['department/create']) ?>">
+                <a href="<?php echo Url::to(['np-message/update']) ?>">
                   <span class="glyphicon glyphicon-retweet"></span> 修改留言</a>
               </li>
               <li>
-                <a href="<?php echo Url::to(['department/create']) ?>">
+                <a href="<?php echo Url::to(['np-message/create']) ?>">
                   <span class="glyphicon glyphicon-minus-sign"></span> 删除留言</a>
               </li>
+              */ ?>
             </ul>
           </li>
 

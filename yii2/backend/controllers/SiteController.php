@@ -12,25 +12,29 @@ use common\models\LoginForm;
  */
 class SiteController extends Controller
 {
+    public $layout = "main_layout";
     /**
      * @inheritdoc
      */
     public function behaviors()
     {
-        $this->layout = "main_layout";
+        
         return [
             'access' => [
                 'class' => AccessControl::className(),
+                'only' => ['logout', 'signup'],
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => ['signup'],
                         'allow' => true,
+                        'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
+                
                 ],
             ],
             'verbs' => [
@@ -95,5 +99,45 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    /** 
+     * Displays teamwork page.
+     */
+    public function actionTeamwork()
+    {
+        return $this->render('teamwork');
+    }
+
+    /** 
+     * Displays personalwork1 page.
+     */
+    public function actionPersonalwork1()
+    {
+        return $this->render('Personalwork1');
+    }
+
+    /** 
+     * Displays personalwork2 page.
+     */
+    public function actionPersonalwork2()
+    {
+        return $this->render('Personalwork2');
+    }
+
+    /** 
+     * Displays personalwork3 page.
+     */
+    public function actionPersonalwork3()
+    {
+        return $this->render('Personalwork3');
+    }
+
+    /** 
+     * Displays personalwork4 page.
+     */
+    public function actionPersonalwork4()
+    {
+        return $this->render('Personalwork4');
     }
 }
