@@ -206,9 +206,12 @@ AppAsset::register($this);
         </li>
         <li class="dropdown menu-merge">
           <a href="#" class="dropdown-toggle fw600 p15" data-toggle="dropdown">
-          	<img src="../statics/assets/img/avatars/1.jpg" alt="avatar" class="mw30 br64">
+
+          	<img src="../../src/img/touxiang.jpg" alt="avatar" class="mw30 br64">
+            
+            
             <?php if(!Yii::$app->user->isGuest){ ?>
-          	<span class="hidden-xs pl15"> <?= Yii::$app->user->identity->username ?> </span>
+          	  <span class="hidden-xs pl15"> <?= Yii::$app->user->identity->username ?> </span>
             <?php } ?>
             <span class="caret caret-tp hidden-xs"></span>
           </a>
@@ -257,25 +260,26 @@ AppAsset::register($this);
           <div class="sidebar-widget author-widget">
             <div class="media">
               <a class="media-left" href="#">
-                <img src="../statics/assets/img/avatars/3.jpg" class="img-responsive">
+                <img src="../../src/img/touxiang.jpg" class="img-responsive">
               </a>
               <div class="media-body">
                 <div class="media-links">
                    <a href="#" class="sidebar-menu-toggle">用户菜单-</a> <a href="<?php echo Url::to(['site/logout']) ?>" data-method="post">登出 </a>
                 </div>
                 <?php if(!Yii::$app->user->isGuest){ ?>
-                <div class="media-author"><?= Yii::$app->user->identity->username ?> </div>
+                  <div class="media-author"><?= Yii::$app->user->identity->username ?> </div>
                 <?php } ?>
               </div>
             </div>
           </div>
+          
 
           <!-- Sidebar Widget - Menu (slidedown) -->
           <div class="sidebar-widget menu-widget">
             <div class="row text-center mbn">
               
               <div class="col-xs-4">
-                <a href="pages_profile.html" class="text-danger" data-toggle="tooltip" data-placement="top" title="Settings">
+                <a href="<?php echo Url::to(['site/index']) ?>" class="text-danger" data-toggle="tooltip" data-placement="top" title="Settings">
                   <span class="fa fa-gears"></span>
                 </a>
               </div>
@@ -300,91 +304,156 @@ AppAsset::register($this);
         <ul class="nav sidebar-menu">
          
           <li class="sidebar-label pt15">信息管理</li>
+
           <li>
             <a class="accordion-toggle" href="<?php echo Url::to(['department/index']) ?>">
-              <span class="glyphicon glyphicon-fire"></span>
-              <span class="sidebar-title">部门管理</span>
+              <span class="glyphicon glyphicon-cog"></span>
+              <span class="sidebar-title">成员管理</span>
               <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
               <li>
                 <a href="<?php echo Url::to(['department/index']) ?>">
-                  <span class="glyphicon glyphicon-book"></span> 部门列表</a>
+                  <span class="glyphicon glyphicon-book"></span> 成员列表</a>
               </li>
               <li>
                 <a href="<?php echo Url::to(['department/create']) ?>">
-                  <span class="glyphicon glyphicon-book"></span> 新建部门</a>
+                  <span class="glyphicon glyphicon-plus-sign"></span> 添加成员</a>
               </li>
             </ul>
           </li>
+
           <li>
             <a class="accordion-toggle" href="<?php echo Url::to(['batch/index']) ?>">
-              <span class="glyphicon glyphicon-fire"></span>
-              <span class="sidebar-title">批次管理</span>
+              <span class="glyphicon glyphicon-list"></span>
+              <span class="sidebar-title">作业管理</span>
               <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
-              <li>
-                <a href="<?php echo Url::to(['batch/index']) ?>">
-                  <span class="glyphicon glyphicon-book"></span> 批次列表</a>
-              </li>
               <li>
                 <a href="<?php echo Url::to(['batch/create']) ?>">
-                  <span class="glyphicon glyphicon-book"></span> 新建批次</a>
+                  <span class="glyphicon glyphicon-book"></span> 团队作业</a>
               </li>
+
+              <li>
+                <a class="accordion-toggle" href="<?php echo Url::to(['batch/index']) ?>">
+                  <span class="glyphicon glyphicon-list"></span>
+                  <span class="sidebar-title">个人作业</span>
+                  <span class="caret"></span>
+                </a>
+                <ul class="nav sub-nav">
+                  <li>
+                    <a href="<?php echo Url::to(['batch/index']) ?>">
+                      <span class="glyphicon glyphicon-book"></span>  朱玲慧</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo Url::to(['batch/create']) ?>">
+                      <span class="glyphicon glyphicon-book"></span>  李兴贺</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo Url::to(['batch/index']) ?>">
+                      <span class="glyphicon glyphicon-book"></span>  黄信旭</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo Url::to(['batch/create']) ?>">
+                      <span class="glyphicon glyphicon-book"></span>  古丽米拉</a>
+                  </li>
+                </ul>
+              </li>
+
             </ul>
           </li>
+
           <li>
-            <a class="accordion-toggle" href="<?php echo Url::to(['level-index/index']) ?>">
-              <span class="glyphicon glyphicon-fire"></span>
-              <span class="sidebar-title">等级评估管理</span>
+            <a class="accordion-toggle" href="<?php echo Url::to(['department/index']) ?>">
+              <span class="glyphicon glyphicon-font"></span>
+              <span class="sidebar-title">留言管理</span>
               <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
               <li>
-                <a href="<?php echo Url::to(['level-index/index','LevelIndexSearch[father_id]'=>0]) ?>">
-                  <span class="glyphicon glyphicon-book"></span> 数据列表</a>
+                <a href="<?php echo Url::to(['department/index']) ?>">
+                  <span class="glyphicon glyphicon-book"></span> 留言列表</a>
               </li>
               <li>
-                <a href="<?php echo Url::to(['level-index/create']) ?>">
-                  <span class="glyphicon glyphicon-book"></span> 录入数据</a>
+                <a href="<?php echo Url::to(['department/create']) ?>">
+                  <span class="glyphicon glyphicon-plus-sign"></span> 添加留言</a>
               </li>
-
-              <!-- <li>
-                <a href="<?php echo Url::to(['input/upload']) ?>">
-                  <span class="glyphicon glyphicon-book"></span> 文件上传</a>
-              </li> -->
+              <li>
+                <a href="<?php echo Url::to(['department/create']) ?>">
+                  <span class="glyphicon glyphicon-retweet"></span> 修改留言</a>
+              </li>
+              <li>
+                <a href="<?php echo Url::to(['department/create']) ?>">
+                  <span class="glyphicon glyphicon-minus-sign"></span> 删除留言</a>
+              </li>
             </ul>
           </li>
-      
 
+        </ul>
+
+        <ul class="nav sidebar-menu">
          
-          <!-- sidebar progress bars -->
-          <li class="sidebar-label pt25 pb10">系统状态</li>
-          <li class="sidebar-stat">
-            <a href="#projectOne" class="fs11">
-              <span class="fa fa-inbox text-info"></span>
-              <span class="sidebar-title text-muted">待定1</span>
-              <span class="pull-right mr20 text-muted">35%</span>
-              <div class="progress progress-bar-xs mh20 mb10">
-                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 35%">
-                  <span class="sr-only">35% Complete</span>
-                </div>
-              </div>
+          <li class="sidebar-label pt15">世界杯</li>
+
+          <li>
+            <a class="accordion-toggle" href="<?php echo Url::to(['department/index']) ?>">
+              <span class="glyphicon glyphicon-flag"></span>
+              <span class="sidebar-title">球队</span>
+              <span class="caret"></span>
             </a>
+            <ul class="nav sub-nav">
+              <li>
+                <a href="<?php echo Url::to(['department/index']) ?>">
+                  <span class="glyphicon glyphicon-book"></span> 球队列表</a>
+              </li>
+              <li>
+                <a href="<?php echo Url::to(['department/create']) ?>">
+                  <span class="glyphicon glyphicon-plus-sign"></span> 添加球队</a>
+              </li>
+            </ul>
           </li>
-          <li class="sidebar-stat">
-            <a href="#projectOne" class="fs11">
-              <span class="fa fa-dropbox text-warning"></span>
-              <span class="sidebar-title text-muted">待定2</span>
-              <span class="pull-right mr20 text-muted">58%</span>
-              <div class="progress progress-bar-xs mh20">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 58%">
-                  <span class="sr-only">58% Complete</span>
-                </div>
-              </div>
+
+          <li>
+            <a class="accordion-toggle" href="<?php echo Url::to(['batch/index']) ?>">
+              <span class="glyphicon glyphicon-user"></span>
+              <span class="sidebar-title">球员</span>
+              <span class="caret"></span>
             </a>
+            <ul class="nav sub-nav">
+              <li>
+                <a href="<?php echo Url::to(['batch/create']) ?>">
+                  <span class="glyphicon glyphicon-book"></span> 球员列表</a>
+              </li>
+
+              <li>
+                <a href="<?php echo Url::to(['batch/create']) ?>">
+                  <span class="glyphicon glyphicon-plus-sign"></span> 添加球员</a>
+              </li>
+              
+            </ul>
           </li>
+
+          <li>
+            <a class="accordion-toggle" href="<?php echo Url::to(['batch/index']) ?>">
+              <span class="glyphicon glyphicon-film"></span>
+              <span class="sidebar-title">精彩瞬间</span>
+              <span class="caret"></span>
+            </a>
+            <ul class="nav sub-nav">
+              <li>
+                <a href="<?php echo Url::to(['batch/create']) ?>">
+                  <span class="glyphicon glyphicon-book"></span> 精彩瞬间</a>
+              </li>
+
+              <li>
+                <a href="<?php echo Url::to(['batch/create']) ?>">
+                  <span class="glyphicon glyphicon-plus-sign"></span> 添加</a>
+              </li>
+              
+            </ul>
+          </li>
+
         </ul>
         <!-- End: Sidebar Menu -->
 

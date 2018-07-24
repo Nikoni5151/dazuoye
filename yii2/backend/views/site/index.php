@@ -9,11 +9,31 @@ $this->title = 'My Yii Application';
     <div class="jumbotron">
         <h1>Congratulations!</h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+        <p class="lead">You have successfully landed on our management backstage.</p>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+        <p>信息相关</p>
+
+        <p>
+            <a class="btn btn-lg btn-success" href="#">浏览成员</a>
+            <a> </a>
+            <a class="btn btn-lg btn-success" href="#">作业下载</a>
+            <a> </a>
+            <a class="btn btn-lg btn-success" href="#">留言管理</a>
+        </p>
+
+        <p>世界杯相关</p>
+
+        <p>
+            <a class="btn btn-lg btn-success" href="#">查看球队</a>
+            <a> </a>
+            <a class="btn btn-lg btn-success" href="#">查看球员</a>
+            <a> </a>
+            <a class="btn btn-lg btn-success" href="#">精彩瞬间</a>
+        </p>
+
     </div>
 
+    <?php /*
     <div class="body-content">
 
         <div class="row">
@@ -50,4 +70,5 @@ $this->title = 'My Yii Application';
         </div>
 
     </div>
+    */ ?>
 </div>
