@@ -69,6 +69,48 @@ class WcCountryController extends Controller
     }
 
     /**
+     * Displays a single WcCountry model.
+     * @param varchar $name,$tname
+     * @return mixed
+     */
+    public function actionTeam($name,$tname)
+    {
+        
+        $qry = new query();
+        $qry->select('*')
+            ->from('wc_country')
+            ->where('cname = \'' . $name . '\'');
+        $id = $qry->one()['cid'];
+        
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+            'tname' => $tname,
+
+        ]);
+    }
+
+    /**
+     * Displays a single WcCountry model.
+     * @param varchar $came,$coacname
+     * @return mixed
+     */
+    public function actionCoach($cname,$coachname)
+    {
+        
+        $qry = new query();
+        $qry->select('*')
+            ->from('wc_country')
+            ->where('cname = \'' . $cname . '\'');
+        $id = $qry->one()['cid'];
+        
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+            'coachname' => $coachname,
+
+        ]);
+    }
+
+    /**
      * Creates a new WcCountry model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed

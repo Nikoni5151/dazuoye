@@ -8,6 +8,7 @@ use backend\models\WcCoachSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\db\query;
 
 /**
  * WcCoachController implements the CRUD actions for WcCoach model.
@@ -46,6 +47,24 @@ class WcCoachController extends Controller
     }
 
     /**
+     * Lists all WcCoach models.
+     * @param  varchar $cname
+     * @return mixed
+     */
+    public function actionCountry($cname)
+    {
+        $searchModel = new WcCoachSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->query->where('cname = \'' . $cname . '\'');
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'cname' => $cname,
+        ]);
+    }
+
+    /**
      * Displays a single WcCoach model.
      * @param integer $id
      * @return mixed
@@ -54,6 +73,25 @@ class WcCoachController extends Controller
     {
         return $this->render('view', [
             'model' => $this->findModel($id),
+        ]);
+    }
+
+    /**
+     * Displays a team’s WcCoach model.
+     * @param varchar $name,$tname
+     * @return mixed
+     */
+    public function actionTeam($name,$tname)
+    {
+        $qry = new query();
+        $qry->select('*')
+            ->from('wc_coach')
+            ->where('coachname = \'' . $name . '\'');
+        $id = $qry->one()['coachid'];
+
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+            'tname' => $tname
         ]);
     }
 

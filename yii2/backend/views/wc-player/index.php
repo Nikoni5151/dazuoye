@@ -6,8 +6,12 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\WcPlayerSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-
-$this->title = '球员列表';
+if(isset($tname)){
+    $this->title = $tname . '队的球员列表';
+}
+else{
+    $this->title = '球员列表';
+}
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="wc-player-index">
@@ -24,15 +28,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            //'pid',
+            'pid',
             'pname',
             'number',
-            //'tid',
+            'tid',
             'goals',
             'cname',
             'club',
 
             ['class' => 'yii\grid\ActionColumn'],
+            
         ],
     ]); ?>
 </div>

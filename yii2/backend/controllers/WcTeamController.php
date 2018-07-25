@@ -8,6 +8,7 @@ use backend\models\WcTeamSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\db\query;
 
 /**
  * WcTeamController implements the CRUD actions for WcTeam model.
@@ -52,6 +53,77 @@ class WcTeamController extends Controller
      */
     public function actionView($id)
     {
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+
+    /**
+     * Displays a single WcTeam model.
+     * @param varchar $coachname
+     * @return mixed
+     */
+    public function actionCoach($coachname)
+    {
+        $qry = new query();
+        $qry->select('*')
+            ->from('wc_team')
+            ->where('coachname = \'' . $coachname . '\'');
+        $id = $qry->all()[0]['tid'];
+
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+            'coachname' => $coachname,
+        ]);
+    }
+
+    /**
+     * Displays a country's WcTeam model.
+     * @param varchar $pname
+     * @return mixed
+     */
+    public function actionCountry($cname)
+    {
+        $qry = new query();
+        $qry->select('*')
+            ->from('wc_team')
+            ->where('cname = \'' . $cname . '\'');
+        $id = $qry->all()[0]['tid'];
+
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+            'cname' => $cname,
+        ]);
+    }
+
+    /**
+     * Displays a country's WcTeam model.
+     * @param integer $tid,varchar $pname
+     * @return mixed
+     */
+    public function actionPlayer($tid,$pname)
+    {
+        $id = $tid;
+
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+            'pname' => $pname,
+        ]);
+    }
+
+    /**
+     * Displays a country's WcTeam model.
+     * @param varchar $tname
+     * @return mixed
+     */
+    public function actionMatch($tname)
+    {
+        $qry = new query();
+        $qry->select('*')
+            ->from('wc_team')
+            ->where('tname = \'' . $tname . '\'');
+        $id = $qry->all()[0]['tid'];
+
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);

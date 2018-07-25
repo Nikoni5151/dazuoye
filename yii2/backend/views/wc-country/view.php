@@ -1,12 +1,24 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\WcCountry */
+if(isset($tname)){
+    $this->title = $tname . "队在" . $model->cname;
+    
+}
+else{
+    if(isset($coachname)){
+        $this->title = $coachname . '教练在' . $model->cname;
+    }
+    else{
+        $this->title = $model->cname;
+    }
+}
 
-$this->title = $model->cname;
 $this->params['breadcrumbs'][] = ['label' => '国家列表', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -34,5 +46,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'flag:ntext',
         ],
     ]) ?>
+
+    <br/>
+    <a class="btn btn-success" href="<?php echo Url::to(['wc-team/country','cname' => $model->cname]) ?>">所属球队</a>
+    <a> </a>
+    <a class="btn btn-success" href="<?php echo Url::to(['wc-coach/country','cname' => $model->cname]) ?>">所属教练</a>
 
 </div>

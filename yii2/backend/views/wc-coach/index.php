@@ -6,8 +6,12 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\WcCoachSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-
-$this->title = '教练列表';
+if(isset($cname)){
+    $this->title = $cname . '国籍的教练列表';
+}
+else{
+    $this->title = '教练列表';
+}
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="wc-coach-index">

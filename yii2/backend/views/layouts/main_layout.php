@@ -424,11 +424,11 @@ AppAsset::register($this);
             </a>
             <ul class="nav sub-nav">
               <li>
-                <a href="<?php echo Url::to(['wc-caoch/index']) ?>">
+                <a href="<?php echo Url::to(['wc-coach/index']) ?>">
                   <span class="glyphicon glyphicon-book"></span> 教练列表</a>
               </li>
               <li>
-                <a href="<?php echo Url::to(['wc-caoch/create']) ?>">
+                <a href="<?php echo Url::to(['wc-coach/create']) ?>">
                   <span class="glyphicon glyphicon-plus-sign"></span> 添加教练</a>
               </li>
             </ul>

@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'grade')->textInput() ?>
 
-    <?= $form->field($model, 'flag')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'flag')->textInput(['value' => '../../src/flag/XXX.jpg']) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

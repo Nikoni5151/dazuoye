@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\url;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
@@ -37,5 +38,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'club',
         ],
     ]) ?>
+
+
+    <br/>
+    <a class="btn btn-success" href="<?php echo Url::to(['wc-team/player','tid' => $model->tid,'pname' => $model->pname]) ?>">所在球队</a>
 
 </div>

@@ -40,19 +40,29 @@ class WcPlayerController extends Controller
         $searchModel = new WcPlayerSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        //if(!$id == 0){
-        //    $dataProvider->query->where('tid = ' . $id);
-        //}
-
-
         return $this->render('index', [
         'searchModel' => $searchModel,
         'dataProvider' => $dataProvider,
-        //'tid' => $id,
         ]);
 
+    }
 
+    /**
+     * Lists team's WcPlayer models.
+     * @return the team's WcPlayer
+     */
+    public function actionTeam($id,$name)
+    {
+        $searchModel = new WcPlayerSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->query->where('tid = ' . $id);
         
+        return $this->render('index', [
+        'searchModel' => $searchModel,
+        'dataProvider' => $dataProvider,
+        'tname' => $name,
+        ]);
+
     }
 
     /**

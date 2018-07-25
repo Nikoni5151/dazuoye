@@ -46,6 +46,24 @@ class WcMatchController extends Controller
     }
 
     /**
+     * Lists team's WcMatch models.
+     * @param varchar $tname
+     * @return mixed
+     */
+    public function actionTeam($tname)
+    {
+        $searchModel = new WcMatchSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->query->where('hometeam = \'' . $tname .'\' or awayteam = \'' . $tname . '\'');
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'tname' => $tname,
+        ]);
+    }
+
+    /**
      * Displays a single WcMatch model.
      * @param integer $id
      * @return mixed
