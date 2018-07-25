@@ -19,7 +19,7 @@ class WcMatchSearch extends WcMatch
     {
         return [
             [['matchid', 'hscore', 'ascore'], 'integer'],
-            [['hometeam', 'awayteam', 'date', 'win', 'place'], 'safe'],
+            [['hometeam', 'awayteam', 'date', 'place', 'level'], 'safe'],
         ];
     }
 
@@ -67,8 +67,8 @@ class WcMatchSearch extends WcMatch
 
         $query->andFilterWhere(['like', 'hometeam', $this->hometeam])
             ->andFilterWhere(['like', 'awayteam', $this->awayteam])
-            ->andFilterWhere(['like', 'win', $this->win])
-            ->andFilterWhere(['like', 'place', $this->place]);
+            ->andFilterWhere(['like', 'place', $this->place])
+            ->andFilterWhere(['like', 'level', $this->level]);
 
         return $dataProvider;
     }

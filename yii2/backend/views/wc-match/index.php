@@ -6,12 +6,14 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\WcMatchSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+
 if(isset($tname)){
     $this->title = $tname . '队参加的比赛列表';
 }
 else{
     $this->title = '比赛列表';
 }
+
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="wc-match-index">
@@ -34,8 +36,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'date',
             'hscore',
             'ascore',
-            'win',
             'place',
+            'level',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

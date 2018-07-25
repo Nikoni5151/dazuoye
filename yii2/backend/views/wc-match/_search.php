@@ -27,9 +27,9 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'ascore') ?>
 
-    <?php // echo $form->field($model, 'win') ?>
-
     <?php // echo $form->field($model, 'place') ?>
+
+    <?php // echo $form->field($model, 'level') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

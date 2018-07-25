@@ -13,8 +13,8 @@ use Yii;
  * @property string $date
  * @property integer $hscore
  * @property integer $ascore
- * @property string $win
  * @property string $place
+ * @property string $level
  */
 class WcMatch extends \yii\db\ActiveRecord
 {
@@ -32,10 +32,10 @@ class WcMatch extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['hometeam', 'awayteam', 'date', 'hscore', 'ascore', 'win', 'place'], 'required'],
+            [['hometeam', 'awayteam', 'date', 'hscore', 'ascore', 'place', 'level'], 'required'],
             [['date'], 'safe'],
             [['hscore', 'ascore'], 'integer'],
-            [['hometeam', 'awayteam', 'win', 'place'], 'string', 'max' => 50],
+            [['hometeam', 'awayteam', 'place', 'level'], 'string', 'max' => 50],
         ];
     }
 
@@ -51,8 +51,8 @@ class WcMatch extends \yii\db\ActiveRecord
             'date' => '比赛日期',
             'hscore' => '主队得分',
             'ascore' => '客队得分',
-            'win' => '胜利队伍名称',
             'place' => '比赛场地',
+            'level' => '比赛级别',
         ];
     }
 }

@@ -1,7 +1,6 @@
 <?php
 
 use yii\helpers\Html;
-use yii\helpers\url;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
@@ -35,8 +34,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'date',
             'hscore',
             'ascore',
-            'win',
             'place',
+            'level',
         ],
     ]) ?>
 
@@ -44,5 +43,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <a class="btn btn-success" href="<?php echo Url::to(['wc-team/match','tname' => $model->hometeam]) ?>">主队信息</a>
     <a> </a>
     <a class="btn btn-success" href="<?php echo Url::to(['wc-team/match','tname' => $model->awayteam]) ?>">客队信息</a>
+
 
 </div>
